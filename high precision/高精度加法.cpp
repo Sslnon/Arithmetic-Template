@@ -3,34 +3,38 @@
 #include<cstring>
 using namespace std;
 
+
 int main()
 {
 	char a1[100],b1[100];
-	int a[100],b[100],c[100],lena,lenb,lenc,i,x;
-	//xè¡¨ç¤ºè¿›ä½
+	//×Ö·û×é 
+	int a[100],b[100],c[100];
+	//´¦ÀíÖ®ºóµÄÊı×é 
+	int lena,lenb,lenc,i,x;
+	//x±íÊ¾½øÎ»£¬iÊ¡¿Õ¼ä£¨ËäÈ»Ã»ÓÃ£© 
 	memset(a,0,sizeof(a)); 
 	memset(b,0,sizeof(b)); 
 	memset(c,0,sizeof(c)); 
-	//åˆå§‹åŒ–åŠ æ•°ï¼Œç»“æœæ•°ç»„
+	//³õÊ¼»¯¼ÓÊı£¬½á¹ûÊı×é
 	gets(a1);
 	gets(b1);
-	//è¾“å…¥æ•°ä¸² 
+	//ÊäÈëÊı´® 
 	lena=strlen(a1);
 	lenb=strlen(b1);
-	//è®¡ç®—æ•°ä¸²é•¿åº¦ 
+	//¼ÆËãÊı´®³¤¶È 
 	
 	for(i=0;i<=lena-1;i++)
 		a[lena-i]=a1[i]-48;
-		
+	//48Îª0µÄASCiiÂë	
 	for(i=0;i<=lenb-1;i++)
 		b[lenb-i]=b1[i]-48;
-	//è¾“å…¥æ•°ä¸²è½¬æ•°ç»„ 
+	//ÊäÈëÊı´®×ªÊı×é 
 	
 	lenc=1;
 	x=0;
 	
 	while(lenc<=lena||lenc<=lenb)
-	//ä¸ºäº†å¤„ç†aï¼Œbä¸­æ‰€æœ‰çš„æ•° 
+	//ÎªÁË´¦Àía£¬bÖĞËùÓĞµÄÊı 
 	{
 		c[lenc]=a[lenc]+b[lenc]+x;
 		x=c[lenc]/10;
@@ -39,7 +43,7 @@ int main()
 	}
 	
 	c[lenc]=x;
-	//å¤„ç†æœ€åä¸€ä½è¿›ä½
+	//´¦Àí×îºóÒ»Î»½øÎ»
 	
 	if(c[lenc]==0)
 		lenc--;
@@ -47,8 +51,24 @@ int main()
 	for(i=lenc;i>=1;i--)
 		cout<<c[i];
 	cout<<endl; 
+
+	/* ²âÊÔ	
+	for(i=0;i<=20;i++)
+		cout<<a[i];
+	cout<<endl; 
+	for(i=0;i<=20;i++)
+		cout<<b[i];
+	cout<<endl; 
+		for(i=0;i<=20;i++)
+		cout<<c[i];
+	cout<<endl; 
+	
+	*/ 
 	
 	return 0;
 
 
 } 
+
+
+
